@@ -67,7 +67,7 @@ git pull
 git checkout -b module-N-yourname
 ```
 
-> **Carrying code forward:** Each module folder has its own `game.py`, but your *real* game grows in one place. After Module N merges, **copy your finished `game.py` into the next module's folder** before you start — then add that module's new concept on top. Don't start from scratch unless Kaosi says to.
+> **Carrying code forward:** Copy your finished `game.py` into the next module's folder before you start. Starters are mostly `# TODO` — **you** write the `if`/`while`/functions; we don't pre-write them for you.
 
 Plan your story in `GAME_PLAN.md`. Don't copy `reference/`.
 

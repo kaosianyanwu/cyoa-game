@@ -41,10 +41,10 @@ def test_show_scene_prints_text(capsys):
     assert "hallway" in out.lower()
 
 
-def test_main_uses_show_scene_and_get_choice():
-    source = (MODULE_DIR / "game.py").read_text()
-    assert "show_scene(" in source
-    assert "get_choice(" in source
+def test_main_calls_show_scene_and_get_choice(main_body):
+    body = main_body(game)
+    assert "show_scene(" in body
+    assert "get_choice(" in body
 
 
 def test_behaves_like_module_4_writes_and_reads_file(tmp_path, monkeypatch, capsys):

@@ -82,7 +82,15 @@ Module 1 tests should **fail** — you haven't coded yet. You're checking the to
 python3 -m pytest module-1-introduction/test_module1.py -v
 ```
 
-Test output (even failures)? You're good. `command not found`? Stop and flag it.
+Test output (even red ❌ failures)? Setup worked. `command not found`? Stop and flag it.
+
+**Optional — run everything once:**
+
+```bash
+python3 -m pytest -v
+```
+
+You'll see a mix of pass and fail. **That's normal.** Starters are mostly `# TODO` — many tests only pass after *you* write the code for that module. Don't panic at red tests on day one; you fix them one module at a time.
 
 ---
 

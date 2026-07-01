@@ -21,9 +21,8 @@ def test_scenes_is_list():
     assert len(game.SCENES) >= 2
 
 
-def test_uses_while_loop():
-    source = (MODULE_DIR / "game.py").read_text()
-    assert "while " in source
+def test_uses_while_loop_in_main(main_body):
+    assert "while " in main_body(game)
 
 
 def test_writes_ending_file(tmp_path, monkeypatch, capsys):

@@ -2,8 +2,7 @@
 Module 3: Conditional Statements
 
 COPY FIRST: paste your finished Module 2 game.py here, then add this module's work.
-Keep title, name, greeting, and scene variable. Replace the hardcoded ending
-with two choices and if/elif branches.
+Replace the hardcoded ending with two choices and if/elif branches — you write the branching.
 """
 
 
@@ -18,19 +17,9 @@ def main():
     scene_text = "TODO: Describe your opening scene here."
     print(scene_text)
 
-    # TODO: Show two choice options (replace Module 2's hardcoded ending)
-    print("  1) TODO: First choice")
-    print("  2) TODO: Second choice")
-
-    choice = input("> ").strip()
-
-    # TODO: Use if/elif to show different outcome text for each choice
-    if choice == "1":
-        print("TODO: Outcome when player picks choice 1")
-    elif choice == "2":
-        print("TODO: Outcome when player picks choice 2")
-    else:
-        print("That's not a valid choice.")
+    # TODO: Show two choice options
+    # TODO: Ask for the player's choice with input()
+    # TODO: Use if/elif/else for two outcomes + invalid input
 
 
 if __name__ == "__main__":

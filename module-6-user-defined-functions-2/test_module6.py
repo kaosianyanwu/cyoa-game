@@ -17,18 +17,18 @@ def test_has_show_previous_ending():
     assert callable(game.show_previous_ending)
 
 
-def test_main_is_short():
-    source = inspect.getsource(game.main)
-    non_empty = [
-        ln for ln in source.splitlines()
-        if ln.strip() and not ln.strip().startswith("#")
-    ]
-    assert len(non_empty) <= 12, "Keep main() short and readable"
+def test_main_is_short(main_body):
+    lines = [ln for ln in main_body(game).splitlines() if ln.strip()]
+    assert len(lines) <= 8, "Keep main() short — delegate to helper functions"
 
 
-def test_helper_functions_have_docstrings_or_clear_names():
+def test_main_calls_run_game(main_body):
+    assert "run_game(" in main_body(game)
+
+
+def test_helper_functions_exist():
     funcs = [
-        obj
+        name
         for name, obj in inspect.getmembers(game, inspect.isfunction)
         if name != "main" and obj.__module__ == game.__name__
     ]

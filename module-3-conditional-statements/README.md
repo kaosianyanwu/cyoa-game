@@ -4,7 +4,7 @@
 
 ## What you're building
 
-Two choices for the player. **`if` / `elif`** send them to different outcomes.
+Two choices for the player — and **`if` / `elif` / `else` you write yourself** (not pre-written in the starter).
 
 ## Why it matters
 
