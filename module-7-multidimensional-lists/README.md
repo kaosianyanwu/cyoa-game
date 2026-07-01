@@ -8,7 +8,11 @@ A **tracked stat** (budget, energy, courage — your pick). At least one choice 
 
 ## Why it matters
 
-State that persists across turns — health, inventory, score. Your syllabus ties this module to structured numeric data; here we track one stat that moves up or down.
+This module matches your syllabus unit on **multi-dimensional lists** — structured data nested inside other structures.
+
+You already have that pattern: `SCENES` is a **list**, and each scene is a **dict** inside it. Module 7 adds **game state** the same way — values that persist and update across turns (e.g. `stats = {"budget": 60}`). Choices read and modify that structured data, like inventory rows `[["potion", 3], ["gold", 60]]` would in a bigger game.
+
+State that changes turn to turn — health, money, score — is how CYOA games stay interesting.
 
 > 🤖 **AI tools allowed from this module on** — see [README AI policy](../README.md#-ai-use-policy). Still explain every line you submit.
 

@@ -83,7 +83,7 @@ Plan your story in `GAME_PLAN.md`. Don't copy `reference/`.
 | 🔁 **4** | `module-4-sequences-loops-fileio/` | Lists, `while`, file I/O |
 | 🧩 **5** | `module-5-user-defined-functions-1/` | First functions |
 | ✂️ **6** | `module-6-user-defined-functions-2/` | Refactor with functions |
-| 📊 **7** | `module-7-multidimensional-lists/` | Tracked stat (e.g. budget)¹ |
+| 📊 **7** | `module-7-multidimensional-lists/` | Multi-dimensional lists → tracked stat |
 | 🗃️ **8** | `module-8-dictionaries/` | Story as `dict` data |
 | 💾 **9** | `module-9-classes/` | `Player` class, JSON save/load |
 
@@ -97,5 +97,3 @@ Plan your story in `GAME_PLAN.md`. Don't copy `reference/`.
 | **7–9** | ✅ AI okay for debugging — understand every line you ship. |
 
 When in doubt, ask Kaosi first.
-
-¹ Module 7 folder name matches the syllabus unit; the task is adding a tracked stat that changes with choices.

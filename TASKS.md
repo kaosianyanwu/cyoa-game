@@ -59,7 +59,7 @@ No fixed weekly deadline — checkpoints with Kaosi as needed.
 - [ ] `python3 -m pytest module-6-user-defined-functions-2/`
 
 ## Module 7 — Multi-Dimensional Lists 📊
-- [ ] Tracked stat added (budget, energy, etc.)
+- [ ] Tracked stat added (syllabus: structured data that updates — e.g. budget, energy)
 - [ ] At least one choice modifies it
 - [ ] `python3 -m pytest module-7-multidimensional-lists/`
 - [ ] *(AI tools OK from here — see README)*
