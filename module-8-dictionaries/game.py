@@ -1,14 +1,15 @@
 """
 Module 8: Dictionaries
-Build on Module 7 — story as STORY dict keyed by scene id.
+
+COPY FIRST: paste your finished Module 7 game.py here, then convert SCENES
+to a STORY dictionary keyed by scene id. Game logic stays the same — story
+becomes data you can extend without new elif branches.
 """
 
-LOG_FILE = "ending.txt"
 STAT_NAME = "budget"
 STARTING_STAT = 60
 
-# TODO: Fill in your scenes from GAME_PLAN.md
-# Each scene: "text", optional "choices" {key: (label, next_id)}, optional "ending", optional "stat_effect"
+# TODO: Port your scenes from GAME_PLAN.md — add scenes by editing this dict only
 STORY = {
     "start": {
         "text": "TODO: Opening scene for {name}. Budget: ${budget}.",
@@ -30,7 +31,6 @@ STORY = {
 
 
 def show_scene(scene, player):
-    # TODO: print text formatted with player.name and player stats
     pass
 
 
@@ -44,14 +44,14 @@ def apply_stat_effect(scene, stats):
 
 def play(player):
     """Main loop — advance player.current_scene through STORY."""
-    # TODO: while True — lookup STORY[player.current_scene], handle ending, choices
+    # TODO: while True — scene = STORY[player.current_scene], ...
     pass
 
 
 def main():
     print("TODO: Your Game Title")
     name = input("What's your name? ")
-    # TODO: bundle name + current_scene + stats (dict or simple namespace) and call play()
+    # TODO: build a player object (name, current_scene="start", stats) and call play()
     pass
 
 

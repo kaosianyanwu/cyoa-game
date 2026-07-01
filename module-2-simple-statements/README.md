@@ -1,25 +1,29 @@
-# Module 2 — Simple Statements
+# 📝 Module 2 — Simple Statements
+
+> **Start here:** copy your finished Module 1 `game.py` into this folder first.
 
 ## What you're building
 
-Extend your Module 1 program to **hardcode one opening scene**: a short description plus at least two choice options printed as text (no branching yet).
+Store your first scene in a **variable**, print it, then print a **hardcoded ending** — one story beat, no branching yet.
 
 ## Why it matters
 
-You'll practice **variables** and **string literals** — storing scene text in named variables and displaying it with `print()`. This is the first piece of your story on screen.
+**Variables** and **string literals** — your first real scene on screen.
 
 ## Acceptance criteria
 
-- [ ] Still prints your game title and asks for the player's name.
-- [ ] Displays one opening scene description (hardcoded string or variable).
-- [ ] Shows at least two numbered choice options (e.g. `1) ...`, `2) ...`).
-- [ ] No `if`/`elif` branching yet — just display.
-- [ ] All tests in `test_module2.py` pass.
+- [ ] Scene text in a variable and printed
+- [ ] Hardcoded ending printed after it
+- [ ] `python3 -m pytest module-2-simple-statements/`
 
 ## Explain your code
 
-Before you open your PR, write 2–3 sentences answering:
+2–3 sentences here:
 
-> Why did you store your scene text in a variable (or not)? How would you change the scene text without hunting through many `print()` calls?
+> Why store scene text in a variable? How would you change the scene or ending easily?
 
-Paste your answer into the PR description.
+Then message Kaosi: **"Module 2 done, ready for a PR."** → [SUBMITTING_A_PR.md](../SUBMITTING_A_PR.md)
+
+---
+
+*Your answer goes above ↑ and in the PR description.*

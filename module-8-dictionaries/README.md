@@ -1,26 +1,30 @@
-# Module 8 — Dictionaries
+# 🗃️ Module 8 — Dictionaries
+
+> **Start here:** copy your finished Module 7 `game.py` into this folder first.
 
 ## What you're building
 
-Convert your story from a **list indexed by number** to a **`STORY` dictionary**: each scene is keyed by an id string (e.g. `"start"`) with `text`, `choices`, and optional `ending` / `stat_effect`.
+Whole story as a **`STORY` dict** (`scene_id -> {text, choices}`). Loop reads the dict — add scenes by editing data, not code.
 
 ## Why it matters
 
-Dictionaries map names to data — perfect for scene ids like `"forest"` or `"ending_a"`. This is how professional CYOA engines store story content separately from game logic (see the reference example for the target shape).
+How real CYOA engines work. See [`reference/`](../reference/) for the target shape.
 
 ## Acceptance criteria
 
-- [ ] Defines **`STORY`** as a `dict` keyed by scene id strings.
-- [ ] Each scene has at least `"text"`; branching scenes have `"choices"` mapping option → `(label, next_scene_id)`.
-- [ ] Ending scenes use an `"ending"` key instead of choices.
-- [ ] Game loop looks up scenes by id (`STORY[scene_id]`) instead of list index.
-- [ ] Stat tracking from Module 7 still works.
-- [ ] All tests in `test_module8.py` pass.
+- [ ] Story as dictionary
+- [ ] Loop reads from dict, not hardcoded branches
+- [ ] New scene = dict edit only
+- [ ] `python3 -m pytest module-8-dictionaries/`
 
 ## Explain your code
 
-Before you open your PR, write 2–3 sentences answering:
+2–3 sentences here:
 
-> Why is `"start"` a better scene key than `0`? How would you add a new scene without renumbering other scenes?
+> Why `"start"` beats index `0`? What would you edit to add one scene?
 
-Paste your answer into the PR description.
+Then message Kaosi: **"Module 8 done, ready for a PR."** → [SUBMITTING_A_PR.md](../SUBMITTING_A_PR.md)
+
+---
+
+*Your answer goes above ↑ and in the PR description.*

@@ -1,25 +1,30 @@
-# Module 6 — User-Defined Functions (Part 2)
+# ✂️ Module 6 — User Defined Functions II
+
+> **Start here:** copy your finished Module 5 `game.py` into this folder first.
 
 ## What you're building
 
-Finish refactoring Module 5: move **all** scene/choice/ending logic into well-named functions so `main()` is a short, readable outline of the game flow.
+Full refactor — **`main()`** reads like an outline. Each function, one job. Same behavior as Module 5.
 
 ## Why it matters
 
-Clean function boundaries make bugs easier to find and set you up for adding stats (Module 7) and dictionary data (Module 8) without rewriting everything.
+Clean structure before stats (Module 7) and dicts (Module 8) add complexity.
 
 ## Acceptance criteria
 
-- [ ] `main()` is mostly function calls — no large blocks of inline logic.
-- [ ] At least **four** functions besides `main()` (e.g. `show_scene`, `get_choice`, `play_turn`, `write_ending`, `run_game`).
-- [ ] Choice labels are shown with meaningful text (not just `"..."` placeholders).
-- [ ] Game plays through multiple scenes to an ending and writes the log file.
-- [ ] All tests in `test_module6.py` pass.
+- [ ] Short, readable `main()`
+- [ ] Each function has a single clear job
+- [ ] Behaves like Module 5
+- [ ] `python3 -m pytest module-6-user-defined-functions-2/`
 
 ## Explain your code
 
-Before you open your PR, write 2–3 sentences answering:
+2–3 sentences here:
 
-> Which function would you change first if you wanted to add a third choice to every scene? Why did you split responsibilities the way you did?
+> Which function would you touch to add a third choice everywhere? Why split things this way?
 
-Paste your answer into the PR description.
+Then message Kaosi: **"Module 6 done, ready for a PR."** → [SUBMITTING_A_PR.md](../SUBMITTING_A_PR.md)
+
+---
+
+*Your answer goes above ↑ and in the PR description.*

@@ -1,29 +1,31 @@
-# Module 7 — Multidimensional Lists (Tracked Stat)
+# 📊 Module 7 — Multi-Dimensional Lists
+
+> **Start here:** copy your finished Module 6 `game.py` into this folder first.
 
 ## What you're building
 
-Add a **tracked stat** (e.g. `budget`, `health`, or `courage`) that starts at a value and **changes based on choices**. Display it when the story ends (or after each scene).
+A **tracked stat** (budget, energy, courage — your pick). At least one choice changes it.
 
 ## Why it matters
 
-Games need state that persists across turns. You'll practice updating variables from player decisions — the same idea behind inventory, health bars, and scores. (Your syllabus ties this to working with structured numeric data in lists; here we track one stat you modify over time.)
+State that persists across turns — health, inventory, score. Your syllabus ties this module to structured numeric data; here we track one stat that moves up or down.
+
+> 🤖 **AI tools allowed from this module on** — see [README AI policy](../README.md#-ai-use-policy). Still explain every line you submit.
 
 ## Acceptance criteria
 
-- [ ] Defines a starting stat value (document it in `GAME_PLAN.md`).
-- [ ] At least one choice **increases or decreases** the stat.
-- [ ] Final stat value is **printed** at the ending.
-- [ ] Refactored functions from Module 6 still drive the game loop.
-- [ ] All tests in `test_module7.py` pass.
+- [ ] Tracked stat added
+- [ ] At least one choice modifies it
+- [ ] `python3 -m pytest module-7-multidimensional-lists/`
 
 ## Explain your code
 
-Before you open your PR, write 2–3 sentences answering:
+2–3 sentences here:
 
-> Which choices change your stat, and by how much? Could a player reach the same ending with different stat values?
+> Which choices change the stat? Same ending, different stat values possible?
 
-Paste your answer into the PR description.
+Then message Kaosi: **"Module 7 done, ready for a PR."** → [SUBMITTING_A_PR.md](../SUBMITTING_A_PR.md)
 
-## AI use
+---
 
-From this module onward, you **may** use AI to help debug — but you must explain every line you submit.
+*Your answer goes above ↑ and in the PR description.*

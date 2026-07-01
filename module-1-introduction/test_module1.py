@@ -16,15 +16,22 @@ def test_main_is_callable():
     assert callable(game.main)
 
 
-def test_prints_title_and_uses_name(capsys, monkeypatch):
+def test_prints_title(capsys, monkeypatch):
     monkeypatch.setattr(sys, "stdin", __import__("io").StringIO("River\n"))
     game.main()
     captured = capsys.readouterr().out
     assert "TODO" not in captured, "Replace the placeholder title with your game title"
-    assert "River" in captured
-    assert "What's your name?" in captured or "name" in captured.lower()
+    assert captured.strip()
 
 
-def test_source_uses_input():
+def test_asks_name_with_input():
     source = (MODULE_DIR / "game.py").read_text()
     assert "input(" in source
+
+
+def test_greets_player_by_name(capsys, monkeypatch):
+    monkeypatch.setattr(sys, "stdin", __import__("io").StringIO("River\n"))
+    game.main()
+    captured = capsys.readouterr().out
+    assert "River" in captured
+    assert "What's your name?" in captured or "name" in captured.lower()

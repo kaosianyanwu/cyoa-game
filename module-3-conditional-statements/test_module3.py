@@ -12,7 +12,14 @@ game = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(game)
 
 
-def test_choice_1_and_2_produce_different_output(capsys, monkeypatch):
+def test_shows_two_options(capsys, monkeypatch):
+    monkeypatch.setattr(sys, "stdin", __import__("io").StringIO("Sam\n1\n"))
+    game.main()
+    out = capsys.readouterr().out
+    assert "1" in out and "2" in out
+
+
+def test_choice_1_and_2_produce_different_outcomes(capsys, monkeypatch):
     def run_with(choice):
         monkeypatch.setattr(
             sys, "stdin", __import__("io").StringIO(f"Sam\n{choice}\n")
@@ -22,7 +29,7 @@ def test_choice_1_and_2_produce_different_output(capsys, monkeypatch):
 
     out1 = run_with("1")
     out2 = run_with("2")
-    assert out1 != out2, "Each choice should lead to different follow-up text"
+    assert out1 != out2, "Each choice should lead to a different outcome"
     assert "TODO" not in out1 and "TODO" not in out2
 
 
@@ -35,5 +42,5 @@ def test_uses_if_elif():
 def test_invalid_choice_handled(capsys, monkeypatch):
     monkeypatch.setattr(sys, "stdin", __import__("io").StringIO("Sam\n9\n"))
     game.main()
-    out = capsys.readouterr().out.lower()
-    assert "valid" in out or "invalid" in out or "not" in out
+    out = capsys.readouterr().out
+    assert out, "Program should still produce output when input is invalid"

@@ -1,10 +1,8 @@
 """
 Mall Run — REFERENCE EXAMPLE ONLY (see EXAMPLE_GAME_PLAN.md)
-This shows what a *finished* CYOA game looks like once you've reached
-Module 8 (dictionaries) and Module 9 (classes + save/load).
-Read it, run it, play with it — but your own game should be written by
-YOU, in your own module folders, one concept at a time. Don't copy this
-in. The point is to see the shape of where you're headed.
+
+Copying this file into your module folders defeats the purpose — build
+your own game one module at a time. Read and run this to see the end shape.
 """
 
 import json

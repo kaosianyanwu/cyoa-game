@@ -13,46 +13,42 @@ game = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(game)
 
 
-def test_player_class():
+def test_player_class_holds_state():
     assert hasattr(game, "Player")
-    p = game.Player("Test")
-    assert hasattr(p, "name")
-    assert hasattr(p, "current_scene")
-    assert hasattr(p, "stats")
+    player = game.Player("Test")
+    assert player.name == "Test"
+    assert hasattr(player, "current_scene")
+    assert hasattr(player, "stats")
 
 
-def test_to_dict_round_trip():
-    p = game.Player("Alex")
-    data = p.to_dict()
-    assert isinstance(data, dict)
-    restored = game.Player.from_dict(data)
-    assert restored.name == p.name
-    assert restored.current_scene == p.current_scene
-    assert restored.stats == p.stats
-
-
-def test_save_and_load(tmp_path, monkeypatch):
+def test_save_game_writes_json_after_state_change(tmp_path, monkeypatch):
     save_path = tmp_path / "save.json"
     monkeypatch.setattr(game, "SAVE_FILE", str(save_path))
     player = game.Player("Sam")
+    player.current_scene = "path_a"
+    player.stats = {game.STAT_NAME: 40}
     game.save_game(player)
     assert save_path.exists()
-    loaded = game.load_game()
-    assert loaded is not None
-    assert loaded.name == "Sam"
+    data = json.loads(save_path.read_text())
+    assert data["name"] == "Sam"
+    assert data["current_scene"] == "path_a"
+    assert data["stats"][game.STAT_NAME] == 40
+
+
+def test_load_game_restores_exact_progress(tmp_path, monkeypatch):
+    save_path = tmp_path / "save.json"
+    monkeypatch.setattr(game, "SAVE_FILE", str(save_path))
+    original = game.Player("Max")
+    original.current_scene = "path_b"
+    original.stats = {game.STAT_NAME: 25}
+    game.save_game(original)
+    restored = game.load_game()
+    assert restored is not None
+    assert restored.name == "Max"
+    assert restored.current_scene == "path_b"
+    assert restored.stats[game.STAT_NAME] == 25
 
 
 def test_load_missing_returns_none(tmp_path, monkeypatch):
     monkeypatch.setattr(game, "SAVE_FILE", str(tmp_path / "nope.json"))
     assert game.load_game() is None
-
-
-def test_save_writes_valid_json(tmp_path, monkeypatch):
-    save_path = tmp_path / "save.json"
-    monkeypatch.setattr(game, "SAVE_FILE", str(save_path))
-    player = game.Player("Jo")
-    player.current_scene = "path_a"
-    player.stats = {game.STAT_NAME: 40}
-    game.save_game(player)
-    data = json.loads(save_path.read_text())
-    assert "name" in data and "current_scene" in data and "stats" in data

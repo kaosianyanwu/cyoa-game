@@ -18,27 +18,30 @@ def test_story_is_dict_with_string_keys():
     assert all(isinstance(k, str) for k in game.STORY)
 
 
-def test_scenes_have_text():
+def test_scenes_have_text_and_choices_shape():
     for scene_id, scene in game.STORY.items():
         assert "text" in scene, f"Scene {scene_id!r} needs 'text'"
-
-
-def test_branching_scene_has_choices():
     start = game.STORY["start"]
     assert "choices" in start
-    key, (label, next_id) = next(iter(start["choices"].items()))
-    assert isinstance(next_id, str), "choices should map to next scene id strings"
+    _, (label, next_id) = next(iter(start["choices"].items()))
+    assert isinstance(label, str)
+    assert isinstance(next_id, str)
 
 
-def test_ending_scene_has_no_choices():
-    endings = [s for s in game.STORY.values() if "ending" in s]
-    assert len(endings) >= 1
-    for scene in endings:
-        assert "choices" not in scene
+def test_game_loop_reads_from_story():
+    source = (MODULE_DIR / "game.py").read_text()
+    assert "STORY[" in source, "Look up scenes from the STORY dictionary"
 
 
-def test_play_advances_by_scene_id(monkeypatch, capsys):
+def test_new_scene_is_data_only():
+    """Adding a dict entry should be enough — no per-scene if/elif branches."""
+    source = (MODULE_DIR / "game.py").read_text()
+    branch_count = source.count('elif scene') + source.count('elif scene_id')
+    assert branch_count == 0, "Avoid hardcoded elif branches per scene id"
+
+
+def test_play_reaches_ending(monkeypatch, capsys):
     monkeypatch.setattr(sys, "stdin", __import__("io").StringIO("Quinn\n1\n"))
     game.main()
     out = capsys.readouterr().out
-    assert "THE END" in out or "End" in out or "ending" in out.lower()
+    assert "THE END" in out or "End" in out

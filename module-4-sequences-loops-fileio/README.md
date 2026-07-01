@@ -1,25 +1,33 @@
-# Module 4 — Sequences, Loops, and File I/O
+# 🔁 Module 4 — Sequences, Loops, and File I/O
+
+> **Start here:** copy your finished Module 3 `game.py` into this folder first.
 
 ## What you're building
 
-Refactor your story into a **list of scenes** and a **`while` loop** that keeps playing until the story ends. When the player reaches an ending, **write the result to a text file** (your first file I/O).
+**List** of scenes, **`while`** loop to play through them, **write** the ending to a file, **read** it back on the next run.
 
 ## Why it matters
 
-Lists hold ordered data (your scene sequence). Loops let you repeat the "show scene → get choice → advance" pattern without copy-pasting code. Writing to a file persists something after the program exits.
+Lists + loops = multi-scene games without copy-paste. File I/O = memory between runs.
+
+> The read-back is practice reading a file — not something most games do in real life, but good for learning.
 
 ## Acceptance criteria
 
-- [ ] Story scenes are stored in a **list** (or list of structures you index into).
-- [ ] A **`while` loop** drives the game until an ending is reached.
-- [ ] At least **3 scenes** are playable (opening + branches toward an ending).
-- [ ] On ending, writes something to a file (e.g. player name + ending title) using `open(..., "w")`.
-- [ ] All tests in `test_module4.py` pass.
+- [ ] Scenes stored as a list
+- [ ] `while` loop, scene to scene
+- [ ] Writes ending to a file
+- [ ] Reads file back on next run
+- [ ] `python3 -m pytest module-4-sequences-loops-fileio/`
 
 ## Explain your code
 
-Before you open your PR, write 2–3 sentences answering:
+2–3 sentences here:
 
-> How does your `while` loop know when to stop? What exactly gets written to the file, and where does the file appear when you run the program?
+> When does the loop stop? What's in the file, and what does the player see on run #2?
 
-Paste your answer into the PR description.
+Then message Kaosi: **"Module 4 done, ready for a PR."** → [SUBMITTING_A_PR.md](../SUBMITTING_A_PR.md)
+
+---
+
+*Your answer goes above ↑ and in the PR description.*

@@ -1,12 +1,24 @@
 """
 Module 4: Sequences, Loops, and File I/O
-Build on Module 3 — list of scenes, while loop, write ending to file.
+
+COPY FIRST: paste your finished Module 3 game.py here, then refactor into this shape.
+Turn your scenes into SCENES list + while loop. Add file write AND read-back
+(show the previous run's ending when the game starts — practice for file I/O).
 """
+
+import os
 
 LOG_FILE = "ending.txt"
 
-# TODO: Define a list of scenes. Each scene can be a dict with keys like:
-#   "text", "choices" (dict mapping "1"/"2" to next scene index), and optionally "ending"
+
+def show_previous_ending():
+    """If LOG_FILE exists, read it and print it for the player."""
+    # TODO: open LOG_FILE for reading and print its contents
+    if os.path.exists(LOG_FILE):
+        pass
+
+
+# TODO: Move your story into this list (opening scene + paths to endings)
 SCENES = [
     {
         "text": "TODO: Opening scene.",
@@ -24,12 +36,12 @@ SCENES = [
 
 
 def main():
-    # TODO: Print title and ask for name
+    show_previous_ending()
+
     print("TODO: Your Game Title")
     name = input("What's your name? ")
     print(f"Welcome, {name}!")
 
-    # TODO: Use a while loop — track current scene index, stop when scene has "ending"
     scene_index = 0
     while True:
         scene = SCENES[scene_index]
@@ -37,14 +49,12 @@ def main():
 
         if "ending" in scene:
             print(f"\n=== THE END: {scene['ending']} ===")
-            # TODO: Write the ending to LOG_FILE (include player name and ending title)
             with open(LOG_FILE, "w") as f:
                 f.write(f"{name} reached ending: {scene['ending']}\n")
             break
 
-        # TODO: Show choices and ask for input; update scene_index from scene["choices"]
         for key in scene["choices"]:
-            print(f"  {key}) ...")
+            print(f"  {key}) ...")  # TODO: use your choice labels
         choice = input("> ").strip()
         while choice not in scene["choices"]:
             choice = input("Please choose a valid option: ").strip()

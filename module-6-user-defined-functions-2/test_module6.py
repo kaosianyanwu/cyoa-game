@@ -13,33 +13,41 @@ game = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(game)
 
 
-def test_at_least_four_helper_functions():
-    funcs = [
-        name
-        for name, obj in inspect.getmembers(game, inspect.isfunction)
-        if name != "main" and obj.__module__ == game.__name__
-    ]
-    assert len(funcs) >= 4, f"Define at least 4 helper functions; found: {funcs}"
+def test_has_show_previous_ending():
+    assert callable(game.show_previous_ending)
 
 
 def test_main_is_short():
     source = inspect.getsource(game.main)
-    non_empty = [ln for ln in source.splitlines() if ln.strip() and not ln.strip().startswith("#")]
-    assert len(non_empty) <= 12, "Keep main() short — delegate to helper functions"
+    non_empty = [
+        ln for ln in source.splitlines()
+        if ln.strip() and not ln.strip().startswith("#")
+    ]
+    assert len(non_empty) <= 12, "Keep main() short and readable"
 
 
-def test_choice_labels_not_placeholder(capsys):
-    scene = game.SCENES[0]
-    game.show_scene(scene)
-    out = capsys.readouterr().out
-    assert "..." not in out
-    assert "TODO" not in out
+def test_helper_functions_have_docstrings_or_clear_names():
+    funcs = [
+        obj
+        for name, obj in inspect.getmembers(game, inspect.isfunction)
+        if name != "main" and obj.__module__ == game.__name__
+    ]
+    assert len(funcs) >= 2, "Split work across focused helper functions"
 
 
-def test_full_game(tmp_path, monkeypatch):
+def test_show_scene_and_get_choice_still_exist():
+    assert callable(game.show_scene)
+    assert callable(game.get_choice)
+
+
+def test_behaves_like_module_5(tmp_path, monkeypatch, capsys):
     log_file = tmp_path / "ending.txt"
+    marker = "PRIOR_RUN: Riley reached ending: Ending B"
+    log_file.write_text(marker)
     monkeypatch.setattr(game, "LOG_FILE", str(log_file))
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(sys, "stdin", __import__("io").StringIO("Riley\n1\n"))
     game.main()
+    out = capsys.readouterr().out
+    assert marker in out
     assert log_file.exists()

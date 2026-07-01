@@ -1,25 +1,30 @@
-# Module 3 — Conditional Statements
+# 🔀 Module 3 — Conditional Statements
+
+> **Start here:** copy your finished Module 2 `game.py` into this folder first.
 
 ## What you're building
 
-Add **branching** to your opening scene: after the player picks option 1 or 2, show a *different* follow-up message for each choice using `if` / `elif` / `else`.
+Two choices for the player. **`if` / `elif`** send them to different outcomes.
 
 ## Why it matters
 
-Conditional statements let your story react to the player. This is the core mechanic of choose-your-own-adventure games.
+Conditionals = the core CYOA mechanic. The story reacts to input.
 
 ## Acceptance criteria
 
-- [ ] Still prints title, asks for name, and shows the opening scene with two choices.
-- [ ] Prompts the player to enter their choice (e.g. `1` or `2`).
-- [ ] Uses `if` / `elif` (and optionally `else`) to show different text for each choice.
-- [ ] Handles invalid input (re-prompt or show a message).
-- [ ] All tests in `test_module3.py` pass.
+- [ ] Player shown two choices
+- [ ] `if`/`elif` → different outcomes
+- [ ] Invalid input handled without crashing
+- [ ] `python3 -m pytest module-3-conditional-statements/`
 
 ## Explain your code
 
-Before you open your PR, write 2–3 sentences answering:
+2–3 sentences here:
 
-> Walk through what happens when the player types `1` vs `2`. What would happen if they typed `3`?
+> What happens for choice 1 vs 2? What about invalid input?
 
-Paste your answer into the PR description.
+Then message Kaosi: **"Module 3 done, ready for a PR."** → [SUBMITTING_A_PR.md](../SUBMITTING_A_PR.md)
+
+---
+
+*Your answer goes above ↑ and in the PR description.*

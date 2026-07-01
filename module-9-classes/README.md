@@ -1,27 +1,32 @@
-# Module 9 — Classes
+# 💾 Module 9 — Classes
+
+> **Start here:** copy your finished Module 8 `game.py` into this folder first.
 
 ## What you're building
 
-Wrap player state in a **`Player` class** (name, current scene, stats) and add **JSON save/load** so a player can quit mid-story and resume later.
+**`Player` class** (name, scene, stats) + **JSON save/load** — quit mid-story, resume exactly where you left off.
 
 ## Why it matters
 
-Classes group related data and behavior. Serializing a `Player` to JSON is a real-world pattern for game saves, user profiles, and app state.
+Classes bundle state. JSON save is a real pattern for games, apps, and profiles. Hardest module — take your time.
 
 ## Acceptance criteria
 
-- [ ] Defines a **`Player`** class with `name`, `current_scene`, and `stats`.
-- [ ] **`to_dict()`** and **`from_dict()`** (classmethod) convert Player ↔ JSON-friendly dict.
-- [ ] **`save_game(player)`** writes JSON to a file after each choice (or at key moments).
-- [ ] **`load_game()`** returns a `Player` if a save exists, else `None`.
-- [ ] **`main()`** offers to resume when a save file is found.
-- [ ] Full play-through still works; save file is removed or cleared on reaching an ending.
-- [ ] All tests in `test_module9.py` pass.
+- [ ] `Player` holds name, current scene, stats
+- [ ] JSON save after each choice
+- [ ] Quit and resume works
+- [ ] `python3 -m pytest module-9-classes/`
 
 ## Explain your code
 
-Before you open your PR, write 2–3 sentences answering:
+2–3 sentences here:
 
-> What data gets saved in JSON, and why is a class easier to save than three separate global variables?
+> What gets saved in JSON? Why is a class easier than three loose variables?
 
-Paste your answer into the PR description.
+Then message Kaosi: **"Module 9 done, ready for a PR."** → [SUBMITTING_A_PR.md](../SUBMITTING_A_PR.md)
+
+---
+
+*Your answer goes above ↑ and in the PR description.*
+
+**Finished?** 🎉 That's the whole project.

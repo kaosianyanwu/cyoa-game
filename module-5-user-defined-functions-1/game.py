@@ -1,7 +1,11 @@
 """
 Module 5: User-Defined Functions (Part 1)
-Build on Module 4 — extract show_scene() and get_choice().
+
+COPY FIRST: paste your finished Module 4 game.py here, then extract functions.
+Behavior must stay identical to Module 4 (including file read/write).
 """
+
+import os
 
 LOG_FILE = "ending.txt"
 
@@ -21,20 +25,27 @@ SCENES = [
 ]
 
 
+def show_previous_ending():
+    # TODO: same read-back behavior as Module 4
+    if os.path.exists(LOG_FILE):
+        pass
+
+
 def show_scene(scene):
     """Display scene text and numbered choices."""
-    # TODO: Print scene text
-    # TODO: If scene has "choices", print each option (you may use placeholder labels)
+    # TODO: Print scene text and choice labels
     pass
 
 
 def get_choice(valid_options):
     """Prompt until the player enters one of valid_options."""
-    # TODO: Loop with input() until choice is in valid_options; return the choice
+    # TODO: validation loop; return the choice
     pass
 
 
 def main():
+    show_previous_ending()
+
     print("TODO: Your Game Title")
     name = input("What's your name? ")
     print(f"Welcome, {name}!")
@@ -42,8 +53,6 @@ def main():
     scene_index = 0
     while True:
         scene = SCENES[scene_index]
-
-        # TODO: Call show_scene(scene) instead of inline prints
         show_scene(scene)
 
         if "ending" in scene:
@@ -52,7 +61,6 @@ def main():
                 f.write(f"{name} reached ending: {scene['ending']}\n")
             break
 
-        # TODO: Call get_choice(...) with the scene's valid choice keys
         choice = get_choice(list(scene["choices"].keys()))
         scene_index = scene["choices"][choice]
 
