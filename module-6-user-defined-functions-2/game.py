@@ -2,7 +2,7 @@
 Module 6: User Defined Functions (Part 2)
 
 COPY FIRST: paste your finished Module 5 game.py here, then refactor further.
-You write: short main(), focused helpers — same behavior as Module 5.
+Short main(), focused helpers — same behavior as Module 5.
 """
 
 LOG_FILE = "ending.txt"

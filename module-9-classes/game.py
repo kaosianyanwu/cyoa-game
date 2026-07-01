@@ -2,7 +2,7 @@
 Module 9: Classes + JSON Save/Load
 
 COPY FIRST: paste your finished Module 8 game.py here, then add Player + save/load.
-You write: to_dict, from_dict, save_game, load_game, resume flow.
+JSON save after each choice; player can quit and resume where they left off.
 """
 
 import json

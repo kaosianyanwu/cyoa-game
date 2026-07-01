@@ -2,7 +2,7 @@
 Module 3: Conditional Statements
 
 COPY FIRST: paste your finished Module 2 game.py here, then add this module's work.
-Replace the hardcoded ending with two choices and if/elif branches — you write the branching.
+Replace the hardcoded ending with two choices and if/elif branches.
 """
 
 

@@ -2,7 +2,7 @@
 Module 8: Dictionaries
 
 COPY FIRST: paste your finished Module 7 game.py here, then convert to a STORY dict.
-You write: STORY keyed by scene id, loop that reads from it — no hardcoded elif per scene.
+Game loop reads from STORY — add scenes by editing the dict, not new elif branches.
 """
 
 STAT_NAME = "budget"

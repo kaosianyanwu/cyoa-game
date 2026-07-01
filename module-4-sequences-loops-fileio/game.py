@@ -2,7 +2,7 @@
 Module 4: Sequences, Loops, and File I/O
 
 COPY FIRST: paste your finished Module 3 game.py here, then refactor into this shape.
-You write: SCENES list, while loop, file write, and read-back on the next run.
+Add SCENES list, while loop, file write, and read-back on the next run.
 """
 
 LOG_FILE = "ending.txt"

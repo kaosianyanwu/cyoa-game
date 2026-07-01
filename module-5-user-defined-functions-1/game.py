@@ -1,8 +1,8 @@
 """
 Module 5: User Defined Functions (Part 1)
 
-COPY FIRST: paste your finished Module 4 game.py here, then extract functions.
-You write: show_scene() and get_choice() — same behavior as Module 4.
+COPY FIRST: paste your finished Module 4 game.py here, then extract show_scene() and get_choice().
+Same behavior as Module 4.
 """
 
 LOG_FILE = "ending.txt"

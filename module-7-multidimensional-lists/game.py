@@ -2,7 +2,7 @@
 Module 7: Tracked Stat (Multi-Dimensional Lists)
 
 COPY FIRST: paste your finished Module 6 game.py here, then add a tracked stat.
-You write: stat that changes on at least one choice. Syllabus: multi-dimensional lists.
+Syllabus: multi-dimensional lists. At least one choice should change the stat.
 """
 
 LOG_FILE = "ending.txt"
