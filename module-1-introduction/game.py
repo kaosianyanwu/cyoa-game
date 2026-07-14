@@ -20,3 +20,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+print ("Solo Leveling")
+name = input ("What is players name?")
+print( "welcome", name, "to Solo Leveling")
