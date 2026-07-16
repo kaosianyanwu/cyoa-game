@@ -8,14 +8,9 @@ This is the first module — no copy step. Start here.
 
 
 def main():
-    # TODO: Print your game title (choose a name from your GAME_PLAN.md)
-    print("TODO: Your Game Title")
-
-    # TODO: Ask the player for their name using input()
-    name = input("What's your name? ")
-
-    # TODO: Greet the player using their name in a welcome message
-    print(f"Welcome, {name}!")
+    print("Solo Leveling")
+    name = input("What is players name?")
+    print( f"welcome {name} to Solo Leveling")
 
 
 if __name__ == "__main__":
