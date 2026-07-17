@@ -9,9 +9,9 @@ Keep title + name + greeting. Add a scene variable and a hardcoded ending.
 def main():
     print ("Solo Leveling")
     name = input ("What is players name?")
-    print( "welcome", name, "to Solo Leveling")
+    print(F"welcome {name} to Solo Leveling")
     scene = input("Write scene of your choice :")
-    print ( scene)
+    print (scene)
     print("And you notice youre in a new dimension")
 
 
