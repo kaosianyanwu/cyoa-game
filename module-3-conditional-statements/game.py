@@ -16,16 +16,13 @@ def main():
     print(scene)
     print("And you notice youre in a new dimension and you have powers")
 
-    power= input("Do you want Superstrength or Invisibility?")  
-
-    if power == "Superstrength":
-        print("You have now gained Superstrength")
-        
-    elif power == "Invisibility":
-        print("You have now gained Invisibility")
+    power = input("Do you want Super strength or Invisibility?").strip().lower()
+    if power == "super strength":
+       print("You have now gained Super strength")
+    elif power == "invisibility":
+       print("You have now gained Invisibility")
     else:
-        print("You have not chosen a valid power, you remain normal.")
-
+       print("You have not chosen a valid power, you remain normal.")
 
 if __name__ == "__main__":
     main()

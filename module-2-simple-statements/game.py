@@ -7,7 +7,7 @@ Keep title + name + greeting. Add a scene variable and a hardcoded ending.
 
 
 def main():
-   print( "welcome", name, "to Solo Leveling")
+    name = input("What is your name? ")
     print(F"welcome {name} to Solo Leveling")
     scene = input("Write scene of your choice :")
     print ( scene)
