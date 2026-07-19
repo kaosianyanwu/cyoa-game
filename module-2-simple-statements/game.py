@@ -12,7 +12,7 @@ def main():
     print(F"welcome {name} to Solo Leveling")
     scene = input("Write scene of your choice :")
     print (scene)
-    print("And you notice youre in a new dimension")
+    print("And you notice youre in a new dimension and you notice you hve superpowers")
 
 
 if __name__ == "__main__":
