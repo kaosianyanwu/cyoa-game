@@ -10,7 +10,6 @@ def main():
     name = input("What is your name? ")
     print(F"welcome {name} to Solo Leveling")
     scene = input("Write scene of your choice :")
-    print ( scene)
     print (scene)
     print("And you notice youre in a new dimension")
 
