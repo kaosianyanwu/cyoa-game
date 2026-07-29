@@ -19,7 +19,7 @@ def show_previous_ending():
 
 def main():
     print("Solo Leveling")
-
+    
     name = input("What is players name?")
     print( "welcome", name, "to Solo Leveling")
 
