@@ -7,20 +7,22 @@ Replace the hardcoded ending with two choices and if/elif branches.
 
 
 def main():
-    # TODO: Print your game title
-    print("TODO: Your Game Title")
+    print("Solo Leveling")
 
-    name = input("What's your name? ")
-    print(f"Welcome, {name}!")
+    name = input("What is players name?")
+    print( "welcome", name, "to Solo Leveling")
 
-    # TODO: Keep your scene in a variable (from Module 2)
-    scene_text = "TODO: Describe your opening scene here."
-    print(scene_text)
+    scene= input("Write scene of your choice :")
+    print(scene)
+    print("And you notice youre in a new dimension and you have powers")
 
-    # TODO: Show two choice options
-    # TODO: Ask for the player's choice with input()
-    # TODO: Use if/elif/else for two outcomes + invalid input
-
+    power = input("Do you want Super strength or Invisibility?").strip().lower()
+    if power == "super strength":
+       print("You have now gained Super strength")
+    elif power == "invisibility":
+       print("You have now gained Invisibility")
+    else:
+       print("You have not chosen a valid power, you remain normal.")
 
 if __name__ == "__main__":
     main()

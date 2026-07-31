@@ -7,12 +7,12 @@ Keep title + name + greeting. Add a scene variable and a hardcoded ending.
 
 
 def main():
-    print ("Solo Leveling")
-    name = input ("What is players name?")
+    name = input("What is your name? ")
     print(F"welcome {name} to Solo Leveling")
     scene = input("Write scene of your choice :")
     print (scene)
     print("And you notice youre in a new dimension")
+
 
 
 if __name__ == "__main__":
